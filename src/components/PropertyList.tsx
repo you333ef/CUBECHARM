@@ -42,14 +42,14 @@ const PropertyList = () => {
         {/* Favorite Card */}
 
         <div className="hidden lg:block">
-          <h1 className="mb-1 text-lg font-semibold">Favorite</h1>
+          <h1 className="mb-1 text-lg font-semibold">Homes List</h1>
           <FavoriteCard />
-          <Link to="/account/my-favorites">
+         
             <Button
-              name="All Favorites"
+              name="See More"
               className="w-full mt-3 mx-auto bg-gray-200 p-2 rounded-lg hover:bg-gray-300"
             />
-          </Link>
+         
         </div>
       </div>
     </div>

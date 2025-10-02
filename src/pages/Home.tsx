@@ -1,14 +1,15 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import PropertyList from "../components/PropertyList";
 import CategoryBar from "../components/CategoryBar";
-
+import { Outlet } from "react-router-dom";
 const Home = () => {
   return (
     <>
       <Header />
       <CategoryBar />
-      <PropertyList />
+      
+      <Outlet/>
+    
       <Footer />
     </>
   );

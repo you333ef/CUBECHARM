@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import ForgotPassword from "./pages/ForgotPassword";
@@ -20,13 +20,18 @@ import Forget from "./Authuntcation/Forget";
 import Reset from "./Authuntcation/Reset";
 import Verifi from "./Authuntcation/Verifi";
 import ChangePass from "./Authuntcation/ChangePass";
+import PropertyList from "./components/PropertyList";
+import GYMS from "./categories/GYMS";
+import Resturants from "./categories/Resturants";
+import Hotels from "./categories/Hotels";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+           <Route path="/" element={<Navigate to="/HomeList" />} />
+         
           <Route path="/signup" element={<Signup />}></Route>
           {/* <Route path="/admin/auth" element={<Login />}></Route> */}
           <Route path="/dashboard" element={<Dashboard />}></Route>
@@ -54,7 +59,12 @@ function App() {
           <Route path="ChangePass" element={<ChangePass />} />
         </Route>
 
-
+        <Route path="HomeList" element={<Home/>}>
+          <Route index element={<PropertyList/>}/>
+           <Route path="GYMS" element={<GYMS/>}/>
+            <Route path="Resturants" element={<Resturants/>}/>
+             <Route path="Hotels" element={<Hotels/>}/>
+        </Route>
         </Routes>
       </BrowserRouter>
     </>

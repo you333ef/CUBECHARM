@@ -64,35 +64,36 @@ const MediaGallery = () => {
           />
         </div>
       )}
-      <div className="flex overflow-x-auto space-x-2 mt-2 p-2">
-        {mediaItems.map((item: any, index: number) => (
-          <>
-            {item.isVideo ? (
-              <video
-                width="100%"
-                height="480"
-                src={item.thumbnail}
-                title="Embedded youtube"
-                controls
-                onClick={() => handleThumbnailClick(item)}
-                className={`h-24 w-24 object-cover rounded-lg cursor-pointer border-2 border-transparent active:hover:border-blue-500 hover:border-blue-500 transition-transform duration-200 transform hover:scale-105 ${
-                  selectedMedia.src === item.src ? "border-blue-500" : ""
-                }`}
-              />
-            ) : (
-              <Image
-                src={item.thumbnail}
-                alt={`Thumbnail ${index + 1}`}
-                onClick={() => handleThumbnailClick(item)}
-                className={`h-24 w-24 object-cover rounded-lg cursor-pointer border-2 border-transparent active:hover:border-blue-500 hover:border-blue-500 transition-transform duration-200 transform hover:scale-105 ${
-                  selectedMedia === item.src ? "border-blue-500" : ""
-                }`}
-                loading="lazy"
-              />
-            )}
-          </>
-        ))}
-      </div>
+  <div className="flex overflow-x-auto space-x-2 mt-2 p-2">
+  {mediaItems.map((item: any, index: number) => (
+    <div key={index}>
+      {item.isVideo ? (
+        <video
+          width="100%"
+          height="480"
+          src={item.thumbnail}
+          title="Embedded youtube"
+          controls
+          onClick={() => handleThumbnailClick(item)}
+          className={`h-24 w-24 object-cover rounded-lg cursor-pointer border-2 border-transparent active:hover:border-blue-500 hover:border-blue-500 transition-transform duration-200 transform hover:scale-105 ${
+            selectedMedia.src === item.src ? "border-blue-500" : ""
+          }`}
+        />
+      ) : (
+        <Image
+          src={item.thumbnail}
+          alt={`Thumbnail ${index + 1}`}
+          onClick={() => handleThumbnailClick(item)}
+          className={`h-24 w-24 object-cover rounded-lg cursor-pointer border-2 border-transparent active:hover:border-blue-500 hover:border-blue-500 transition-transform duration-200 transform hover:scale-105 ${
+            selectedMedia === item.src ? "border-blue-500" : ""
+          }`}
+          loading="lazy"
+        />
+      )}
+    </div>
+  ))}
+</div>
+
     </>
   );
 };
