@@ -4,6 +4,7 @@ import FavoriteCard from "../components/FavoriteCard";
 import Button from "../components/Button";
 import Skeleton from "../components/Skeleton";
 import { hotels } from "../utils/hotel_json";
+import SupHotels from "../categoryHotels/supHotels";
 
 // DATA TYPES HOTELS
 interface Hotel {
@@ -21,6 +22,7 @@ const Hotels: React.FC = () => {
 
   return (
     <div className="container mx-auto py-5">
+     <SupHotels/>
       <h2 className="text-2xl ml-3 font-semibold mb-3 text-gray-700">
         Hotels<br />recommended for you
       </h2>

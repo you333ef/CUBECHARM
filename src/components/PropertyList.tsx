@@ -5,12 +5,16 @@ import { Link } from "react-router-dom";
 import Button from "./Button";
 import Skeleton from "./Skeleton";
 import { properties } from "../utils/properties";
+import CategoryBar from "./CategoryBar"; // 👈 استدعاء الكومبوننت
 
 const PropertyList = () => {
   const [loading] = useState(false);
 
   return (
     <div className="container mx-auto py-5">
+      {/* 👇 ضيفنا الـ CategoryBar هنا */}
+      <CategoryBar />
+
       <h2 className="text-2xl ml-3 font-semibold mb-3 text-gray-700">
         Recommendations for you
       </h2>
@@ -40,16 +44,14 @@ const PropertyList = () => {
           </div>
         )}
         {/* Favorite Card */}
-
         <div className="hidden lg:block">
           <h1 className="mb-1 text-lg font-semibold">Homes List</h1>
           <FavoriteCard />
-         
-            <Button
-              name="See More"
-              className="w-full mt-3 mx-auto bg-gray-200 p-2 rounded-lg hover:bg-gray-300"
-            />
-         
+
+          <Button
+            name="See More"
+            className="w-full mt-3 mx-auto bg-gray-200 p-2 rounded-lg hover:bg-gray-300"
+          />
         </div>
       </div>
     </div>

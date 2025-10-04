@@ -1,71 +1,46 @@
+import { useNavigate, useLocation } from "react-router-dom";
 import { HiOutlineHomeModern } from "react-icons/hi2";
 import { LuHotel } from "react-icons/lu";
-import { SiOpenaigym } from "react-icons/si";
-import { IoRestaurantOutline } from "react-icons/io5";
-import { useNavigate, useLocation } from "react-router-dom";
+import { FaUmbrellaBeach, FaBuilding, FaHome, FaCrown, FaMountain, FaBed, FaStar } from "react-icons/fa"; 
+import { MdOutlineHolidayVillage } from "react-icons/md";
 
 const CategoryBar = () => {
-  // Navigate to different categories
   const navi = useNavigate();
   const location = useLocation();
 
-  const TO_GYM = (): void => {
-    navi("/HomeList/GYMS");
-  };
-  const TO_HOTELS = (): void => {
-    navi("/HomeList/Hotels");
-  };
-  const TO_RESTURANT = (): void => {
-    navi("/HomeList/Resturants");
-  };
-  const TO_HOME = (): void => {
-    navi("/HomeList");
-  };
+  const categories = [
+    { name: "Hotels", path: "/HomeList/HOTELSCONTAINER", icon: <LuHotel size={28}/> },
+    { name: "Resorts", path: "/HomeList/RESORTSCONTAINER", icon: <FaUmbrellaBeach size={28}/> },
+    { name: "Apartments", path: "/HomeList/Apartments", icon: <FaBuilding size={28}/> },
+    { name: "Houses", path: "/HomeList/Housesz", icon: <HiOutlineHomeModern size={28}/> },
+    { name: "Villas", path: "/HomeList/Villas", icon: <MdOutlineHolidayVillage size={28}/> },
+    { name: "Palaces", path: "/HomeList/PalaceContainer", icon: <FaCrown size={28}/> },
+    { name: "Chalets", path: "/HomeList/ChaletContainer", icon: <FaMountain size={28}/> },
+    { name: "Hostels", path: "/HomeList/Hostels", icon: <FaBed size={28}/> },
+    { name: "Homestays", path: "/HomeList/Homestays", icon: <FaHome size={28}/> },
+    { name: "Luxury", path: "/HomeList/Luxury", icon: <FaStar size={28}/> },
+  ];
+
+  const renderCategory = (cat: any) => (
+    <div
+      key={cat.name}
+      onClick={() => navi(cat.path)}
+      className="flex flex-col items-center text-center cursor-pointer transition-transform duration-200 hover:scale-105 min-w-[80px]"
+    >
+      <div
+        className={`w-16 h-16 flex items-center justify-center rounded-full bg-gray-100
+          ${location.pathname === cat.path ? "border-2 border-sky-500" : ""}`}
+      >
+        <div className="text-gray-700">{cat.icon}</div>
+      </div>
+      <p className="text-xs mt-2 text-gray-700">{cat.name}</p>
+    </div>
+  );
 
   return (
-    <div className="w-full justify-center mx-auto md:mt-10 lg:mt-10 mt-[15%] md:p-0 lg:p-0 p-3 md:gap-4 flex items-center overflow-x-auto space-x-8 py-4 scrollbar-hide">
-      <div
-        className="flex flex-col items-center text-center cursor-pointer"
-        onClick={TO_HOME}
-      >
-        <HiOutlineHomeModern size={26} className="text-black" />
-        <p className="text-sm font-medium text-black mt-1">Houses</p>
-        {location.pathname === "/HomeList" && (
-          <div className="w-full h-1 bg-sky-blue mt-1"></div>
-        )}
-      </div>
-
-      <div
-        className="flex flex-col items-center text-center cursor-pointer hover:text-black"
-        onClick={TO_HOTELS}
-      >
-        <LuHotel size={26} className="text-gray-500" />
-        <p className="text-sm text-gray-500 mt-1">Hotels</p>
-        {location.pathname === "/HomeList/Hotels" && (
-          <div className="w-full h-1 bg-sky-blue mt-1"></div>
-        )}
-      </div>
-
-      <div
-        className="flex flex-col items-center text-center cursor-pointer hover:text-black"
-        onClick={TO_GYM}
-      >
-        <SiOpenaigym size={26} className="text-gray-500" />
-        <p className="text-sm text-gray-500 mt-1">Gym</p>
-        {location.pathname === "/HomeList/GYMS" && (
-          <div className="w-full h-1 bg-sky-blue mt-1"></div>
-        )}
-      </div>
-
-      <div
-        className="flex flex-col items-center text-center cursor-pointer hover:text-black"
-        onClick={TO_RESTURANT}
-      >
-        <IoRestaurantOutline size={26} className="text-gray-500" />
-        <p className="text-sm text-gray-500 mt-1">Restaurants</p>
-        {location.pathname === "/HomeList/Resturants" && (
-          <div className="w-full h-1 bg-sky-blue mt-1"></div>
-        )}
+    <div className="w-full mt-10 sm:mt-10">
+      <div className="flex flex-row gap-6 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 px-4 py-2">
+        {categories.map(renderCategory)}
       </div>
     </div>
   );
