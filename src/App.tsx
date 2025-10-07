@@ -133,9 +133,13 @@ import ProfileInfo from "./PROFILE.tsx/ProfileInfo";
 import UpdateProfile from "./PROFILE.tsx/UpdateProfile";
 import ProfileContainer from "./PROFILE.tsx/ProfileContainer";
 import Account from "./PROFILE.tsx/Account";
+import { Toaster } from "sonner";
+import Contact from "./PROFILE.tsx/Contact";
+import About from "./PROFILE.tsx/About";
 function App() {
   return (
     <BrowserRouter>
+       <Toaster richColors position="top-right" />
       <Routes>
         {/* Default Redirect */}
         <Route path="/" element={<Navigate to="/HomeList" />} />
@@ -317,6 +321,8 @@ function App() {
             <Route path="ProfileInfo" element={<ProfileInfo />} />
             <Route path="UpdateProfile" element={<UpdateProfile />} />
             <Route path="Account" element={<Account />} />
+            <Route path="Contact" element={<Contact />} />
+               <Route path="About" element={<About />} />
             </Route>
             </Route>
         

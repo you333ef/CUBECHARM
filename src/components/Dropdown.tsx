@@ -8,7 +8,9 @@ import { IoCaretDownSharp } from "react-icons/io5";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { IoSettingsOutline } from "react-icons/io5";
 import { FaUserCircle, FaLock, FaEdit } from "react-icons/fa";  //New Icons To Dropdown 
-import { AiOutlineUser, AiFillSetting } from "react-icons/ai";
+import { AiOutlineUser } from "react-icons/ai";
+import { FaCubes, FaUser, FaShieldAlt, FaEnvelope } from "react-icons/fa";
+
 
 
 import { Link } from "react-router-dom";
@@ -16,6 +18,8 @@ import { Link } from "react-router-dom";
 function Dropdown() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isDropdownSetting, setIsDropdownSetting] = useState(false);
+    const [isCUBECHARM, setCUBECHARM] = useState(false);
+
 
   return (
     <div className="relative ml-3">
@@ -103,6 +107,48 @@ function Dropdown() {
               <RiWechatLine className="mr-2" size={19} />
               Chat
             </Link>
+  <li
+  className="flex items-center justify-between px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer"
+  onClick={() => setCUBECHARM(!isCUBECHARM)}
+>
+  <span className="flex items-center">
+    <FaCubes className="mr-2" size={18} /> 
+    CUBECHARM
+  </span>
+  <IoCaretDownSharp
+    className={`transform transition-transform ${
+      isCUBECHARM ? "rotate-180" : ""
+    }`}
+  />
+</li>
+
+{isCUBECHARM && (
+  <ul className="ml-6">
+    <Link
+      to="/HomeList/ProfileE/About"
+      className="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer"
+    >
+      <FaUser className="mr-2" size={18} /> 
+      About
+    </Link>
+    <Link
+      to="/auth/ChangePass"
+      className="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer"
+    >
+      <FaShieldAlt className="mr-2" size={18} /> 
+      Privacy Policy
+    </Link>
+    <Link
+      to="/HomeList/ProfileE/Contact"
+      className="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer"
+    >
+      <FaEnvelope className="mr-2" size={18} /> 
+      Contact
+    </Link>
+  </ul>
+)}
+
+
 
             <li className="flex items-center px-4 py-2 text-red-400 hover:bg-gray-100 cursor-pointer">
               <MdOutlineLogin className="mr-2" size={19} />
