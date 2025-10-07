@@ -9,7 +9,7 @@ import { GiMoneyStack, GiDiamondRing } from "react-icons/gi";
 interface Category {
   name: string;
   path: string;
-  icon: JSX.Element;
+  icon: any;
 }
 
 const SupApartments = () => {

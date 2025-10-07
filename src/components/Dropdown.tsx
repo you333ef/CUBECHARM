@@ -1,16 +1,21 @@
 import React, { useState } from "react";
 
 import { CgProfile } from "react-icons/cg";
-import { RiFunctionAddLine, RiWechatLine } from "react-icons/ri";
 import { MdOutlineLogin } from "react-icons/md";
+import { RiFunctionLine, RiWechatLine } from "react-icons/ri";
+
 import { IoCaretDownSharp } from "react-icons/io5";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { IoSettingsOutline } from "react-icons/io5";
+import { FaUserCircle, FaLock, FaEdit } from "react-icons/fa";  //New Icons To Dropdown 
+import { AiOutlineUser, AiFillSetting } from "react-icons/ai";
+
 
 import { Link } from "react-router-dom";
 
 function Dropdown() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isDropdownSetting, setIsDropdownSetting] = useState(false);
 
   return (
     <div className="relative ml-3">
@@ -23,13 +28,20 @@ function Dropdown() {
         <IoCaretDownSharp className="mr-2" />
       </button>
       {isDropdownOpen && (
-        <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+        <div className="absolute right-0 mt-2 w-56 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
           <ul className="py-1">
+                      <Link
+                  to="/HomeList/ProfileE/Account"
+                  className="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer"
+                >
+                  <AiOutlineUser className="mr-2" size={18} />
+                  Account
+                </Link>
             <Link
               to="/account/my-ads"
               className="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer"
             >
-              <RiFunctionAddLine className="mr-2" size={19} />
+              <RiFunctionLine className="mr-2" size={19} />
               My Ads
             </Link>
             <Link
@@ -39,13 +51,51 @@ function Dropdown() {
               <IoMdHeartEmpty className="mr-2" size={19} />
               My Favorites
             </Link>
-            <Link
-              to="/account/settings"
-              className="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer"
+                 
+
+            {/* Profile Settings Dropdown */}
+            <li
+              className="flex items-center justify-between px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer"
+              onClick={() => setIsDropdownSetting(!isDropdownSetting)}
             >
-              <IoSettingsOutline className="mr-2" size={19} />
-              Settings
-            </Link>
+              <span className="flex items-center">
+                <IoSettingsOutline className="mr-2" size={19} />
+                Profile Settings
+              </span>
+              <IoCaretDownSharp
+                className={`transform transition-transform ${
+                  isDropdownSetting ? "rotate-180" : ""
+                }`}
+              />
+            </li>
+            {isDropdownSetting && (
+              <ul className="ml-6">
+           
+                <Link
+                  to="/HomeList/ProfileE/ProfileInfo"
+                  className="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer"
+                >
+                  <FaUserCircle className="mr-2" size={18} />
+                  Profile Info
+                </Link>
+                <Link
+                  to="/auth/ChangePass"
+                  className="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer"
+                >
+                  <FaLock className="mr-2" size={18} />
+                  Change Password
+                </Link>
+                <Link
+                  to="/HomeList/ProfileE/UpdateProfile"
+                  className="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer"
+                >
+                  <FaEdit className="mr-2" size={18} />
+                  Update Profile
+                </Link>
+           
+              </ul>
+            )}
+
             <Link
               to="/chat"
               className="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer"

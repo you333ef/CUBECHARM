@@ -3,7 +3,8 @@ import Searchbox from "./Searchbox";
 import MobileNavBottom from "./MobileNavBottom";
 import MobileTopNavbar from "./MobileTopNavbar";
 import Dropdown from "./Dropdown";
-import { RiFunctionAddLine } from "react-icons/ri";
+import { RiAddLine } from "react-icons/ri";
+
 import { useState } from "react";
 import LoginModal from "./LoginModal";
 import Image from "./Image";
@@ -50,7 +51,7 @@ const Header = () => {
               to="/create-ad"
               className="flex items-center text-sm md:text-base bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md text-white transition-all duration-300 ease-in-out"
             >
-              <RiFunctionAddLine className="mr-2" size={20} />
+              <RiAddLine className="mr-2" size={20} />
               Post Ad
             </Link>
           </div>

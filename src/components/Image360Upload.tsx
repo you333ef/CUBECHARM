@@ -1,7 +1,7 @@
 import React from "react";
 import Input from "./Input";
 import { RiCloseFill } from "react-icons/ri";
-import { SiInsta360 } from "react-icons/si";
+import { SiGooglephotos  } from "react-icons/si";
 
 interface Image360UploadProps {
   images: any[];
@@ -27,7 +27,7 @@ const Image360Upload: React.FC<Image360UploadProps> = ({
               className={`flex cursor-pointer flex-col w-full h-36 border-2 border-gray-300 rounded-lg border-dashed hover:bg-gray-50 hover:border-gray-400 transition`}
             >
               <div className="flex flex-col items-center justify-center pt-6">
-                <SiInsta360 className="text-4xl mb-1 mt-1.5 text-gray-500" />
+                <SiGooglephotos className="text-4xl mb-1 mt-1.5 text-gray-500" />
                 <p className="pt-1 text-base tracking-wider text-gray-400">
                   Select a 360° photo (optional)
                 </p>

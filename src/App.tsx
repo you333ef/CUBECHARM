@@ -129,6 +129,10 @@ import Budgett from "./Apartments/Budget";
 import Familyy from "./Apartments/Family";
 import HOTELSCONTAINER from "./categoryHotels/HOTELSCONTAINER";
 import RESORTSCONTAINER from "./categoryResorts/RESORTSCONTAINER";
+import ProfileInfo from "./PROFILE.tsx/ProfileInfo";
+import UpdateProfile from "./PROFILE.tsx/UpdateProfile";
+import ProfileContainer from "./PROFILE.tsx/ProfileContainer";
+import Account from "./PROFILE.tsx/Account";
 function App() {
   return (
     <BrowserRouter>
@@ -252,6 +256,8 @@ function App() {
                <Route path="SmartPalace" element={<SmartPalace />} />
                <Route path="PrivateEstatePalace" element={<PrivateEstatePalace />} />   
             </Route>
+           
+           
 
   <Route path="ChaletContainer" element={<ChaletContainer />}>
   <Route path="Mountain" element={<Mountain />} />
@@ -306,7 +312,14 @@ function App() {
   <Route path="LuxuryCastle" element={<LuxuryCastle />} />
 </Route>
 
-        </Route>
+ {/* PROFILE */}
+            <Route path="ProfileE" element={<ProfileContainer />}>
+            <Route path="ProfileInfo" element={<ProfileInfo />} />
+            <Route path="UpdateProfile" element={<UpdateProfile />} />
+            <Route path="Account" element={<Account />} />
+            </Route>
+            </Route>
+        
       
       </Routes>
     </BrowserRouter>

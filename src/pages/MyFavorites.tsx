@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { RiFunctionAddLine } from "react-icons/ri";
+import { RiAddLine  } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import FavoriteCard from "../components/FavoriteCard";
 import NavigationTabs from "../components/NavigationTabs";
@@ -30,7 +30,7 @@ const MyFavorites = () => {
               to="/create-ad"
               className="inline-flex items-center shrink-0 rounded-md border border-skyline-blue-600 bg-sky-blue px-12 py-2 text-md font-bold text-white transition hover:bg-transparent hover:text-skyline-blue focus:outline-none focus:ring active:text-skyline-blue mt-2"
             >
-              <RiFunctionAddLine className="mr-2" size={19} />
+              <RiAddLine  className="mr-2" size={19} />
               Post Ad
             </Link>
           </div>

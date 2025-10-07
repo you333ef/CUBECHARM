@@ -5,7 +5,7 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { MdFavoriteBorder } from "react-icons/md";
 
 import { useLocation, useNavigate } from "react-router-dom";
-import { RiFunctionAddLine } from "react-icons/ri";
+import { RiAddLine  } from "react-icons/ri";
 
 const NavigationTabs = () => {
   const location = useLocation(); // Detects current path
@@ -38,7 +38,7 @@ const NavigationTabs = () => {
             } w-full sm:w-auto text-center sm:text-left mb-2 sm:mb-0`}
           >
             <div className="flex justify-center sm:justify-start items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
-              <RiFunctionAddLine className="mr-2" size={19} />
+              <RiAddLine  className="mr-2" size={19} />
               Ads
             </div>
           </div>
