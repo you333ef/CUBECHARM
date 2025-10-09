@@ -10,7 +10,7 @@ const Home = () => {
       
       <Outlet/>
     
-      <Footer />
+     
     </>
   );
 };

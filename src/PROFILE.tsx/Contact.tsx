@@ -208,6 +208,36 @@ const Contact = () => {
           We typically respond within 24 hours. For urgent matters, please call us directly.
         </div>
       </div>
+        {/* Footer */}
+      <footer className="bg-white border-t border-gray-200 py-8 mt-16">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-600 text-sm">
+              © 2025 CUBECHARM. All rights reserved.
+            </p>
+            <div className="flex gap-6">
+              <a
+                href="/about"
+                className="text-gray-600 hover:text-[#3b82f6] text-sm font-medium transition-colors duration-200"
+              >
+                About
+              </a>
+              <a
+                href="/privacy"
+                className="text-gray-600 hover:text-[#3b82f6] text-sm font-medium transition-colors duration-200"
+              >
+                Privacy
+              </a>
+              <a
+                href="/contact"
+                className="text-gray-600 hover:text-[#3b82f6] text-sm font-medium transition-colors duration-200"
+              >
+                Contact
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };

@@ -1,5 +1,13 @@
+import { useNavigate } from "react-router-dom";
+
 // Left_Auth.tsx
 const Left_Auth = () => {
+  const naviate=useNavigate()
+  const Help=():void=>{
+    naviate('/Help')
+
+
+  }
   return (
     <div className="flex flex-col justify-center items-start h-full w-full p-10 bg-white text-[#111827] relative overflow-hidden">
       {/* Content */}
@@ -14,8 +22,8 @@ const Left_Auth = () => {
         </p>
 
         {/* Button Explore */}
-        <button className="px-6 py-3 rounded-xl bg-[#4B3CF5] text-white font-semibold shadow-lg transform transition duration-300 hover:scale-105 hover:bg-[#362BBD]">
-          Explore Demo
+        <button onClick={Help} className="px-6 py-3 rounded-xl bg-[#4B3CF5] text-white font-semibold shadow-lg transform transition duration-300 hover:scale-105 hover:bg-[#362BBD]">
+          Help Demo
         </button>
       </div>
     </div>

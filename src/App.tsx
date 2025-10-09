@@ -136,6 +136,8 @@ import Account from "./PROFILE.tsx/Account";
 import { Toaster } from "sonner";
 import Contact from "./PROFILE.tsx/Contact";
 import About from "./PROFILE.tsx/About";
+import Help from "./pages/Help";
+import Privacy from "./pages/Privacy";
 function App() {
   return (
     <BrowserRouter>
@@ -147,6 +149,11 @@ function App() {
         {/* Public Pages */}
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/Privacy" element={<Privacy />} />
+         <Route path="/Help" element={<Help />} />
+           <Route path="/Contact" element={<Contact />} />
+          <Route path="/About" element={<About/>} />
+          
         <Route path="*" element={<NotFound />} />
 
         {/* Dashboard & Chat */}
@@ -246,83 +253,87 @@ function App() {
             <Route path="ButlerService" element={<ButlerService />} />
             <Route path="EcoFriendly" element={<EcoFriendly />} />
             <Route path="Smart" element={<Smart />} />
+
+
            {/* Palaces */}
         </Route>
-           <Route path="PalaceContainer" element={<PalaceContainer />}>
-            <Route path="RoyalPalace" element={<RoyalPalace />} />
-            <Route path="LuxuryPalace" element={<LuxuryPalace />} />
-            <Route path="HistoricPalace" element={<HistoricPalace />} />
-            <Route path="GlassPalace" element={<GlassPalace />} />
-             <Route path="DesertPalace" element={<DesertPalace />} />
-              <Route path="MountainPalace" element={<MountainPalace />} />
-              <Route path="BeachPalace" element={<BeachPalace />} />
-              <Route path="FloatingPalace" element={<FloatingPalace />} />
-               <Route path="SmartPalace" element={<SmartPalace />} />
-               <Route path="PrivateEstatePalace" element={<PrivateEstatePalace />} />   
-            </Route>
-           
-           
+          <Route path="PalaceContainer" element={<PalaceContainer />}>
+          <Route path="RoyalPalace" element={<RoyalPalace />} />
+          <Route path="LuxuryPalace" element={<LuxuryPalace />} />
+          <Route path="HistoricPalace" element={<HistoricPalace />} />
+          <Route path="GlassPalace" element={<GlassPalace />} />
+          <Route path="DesertPalace" element={<DesertPalace />} />
+          <Route path="MountainPalace" element={<MountainPalace />} />
+          <Route path="BeachPalace" element={<BeachPalace />} />
+          <Route path="FloatingPalace" element={<FloatingPalace />} />
+          <Route path="SmartPalace" element={<SmartPalace />} />
+          <Route path="PrivateEstatePalace" element={<PrivateEstatePalace />} />   
+      </Route>
+      
+          <Route path="ChaletContainer" element={<ChaletContainer />}>
+          <Route path="Mountain" element={<Mountain />} />
+          <Route path="Alpine" element={<Alpine />} />
+          <Route path="Beach" element={<Beach />} />
+          <Route path="Desert" element={<Desert />} />
+          <Route path="Forest" element={<Forest />} />
+          <Route path="Lakeview" element={<Lakeview />} />
+          <Route path="Wooden" element={<Wooden />} />
+          <Route path="Eco" element={<Eco />} />
+        </Route>
 
-  <Route path="ChaletContainer" element={<ChaletContainer />}>
-  <Route path="Mountain" element={<Mountain />} />
-  <Route path="Alpine" element={<Alpine />} />
-  <Route path="Beach" element={<Beach />} />
-  <Route path="Desert" element={<Desert />} />
-  <Route path="Forest" element={<Forest />} />
-  <Route path="Lakeview" element={<Lakeview />} />
-  <Route path="Wooden" element={<Wooden />} />
-  <Route path="Eco" element={<Eco />} />
-</Route>
 
-{/* Hostels */}
-{/* Hostels */}
-<Route path="Hostels" element={<HostelContainer />}>
-  <Route path="Hostel" element={<Hostel />} />
-  <Route path="GuestHouse" element={<GuestHouse />} />
-  <Route path="Dormitory" element={<Dormitory />} />
-  <Route path="YouthHostel" element={<YouthHostel />} />
-  <Route path="Monastery" element={<Monastery />} />
-  <Route path="StudentHousing" element={<StudentHousing />} />
-  <Route path="SharedRoom" element={<SharedRoom />} />
-  <Route path="Couchsurfing" element={<Couchsurfing />} />
-  <Route path="CulturalStay" element={<CulturalStay />} />
-  <Route path="TemporaryHousing" element={<TemporaryHousing />} />
-</Route>
+        {/* Hostels */}
+        <Route path="Hostels" element={<HostelContainer />}>
+          <Route path="Hostel" element={<Hostel />} />
+          <Route path="GuestHouse" element={<GuestHouse />} />
+          <Route path="Dormitory" element={<Dormitory />} />
+          <Route path="YouthHostel" element={<YouthHostel />} />
+          <Route path="Monastery" element={<Monastery />} />
+          <Route path="StudentHousing" element={<StudentHousing />} />
+          <Route path="SharedRoom" element={<SharedRoom />} />
+          <Route path="Couchsurfing" element={<Couchsurfing />} />
+          <Route path="CulturalStay" element={<CulturalStay />} />
+          <Route path="TemporaryHousing" element={<TemporaryHousing />} />
+        </Route>
 
-{/* Home Stay */}
-<Route path="Homestays" element={<HomestaysContainer />}>
-  <Route index element={<BeachHouse />} />
-  <Route path="BeachHouse" element={<BeachHouse />} />
-  <Route path="CountryCottage" element={<CountryCottage />} />
-  <Route path="EcoFriendlyHouse" element={<EcoFriendlyHouse />} />
-  <Route path="FamilyHouse" element={<FamilyHouse />} />
-  <Route path="IndependentVilla" element={<IndependentVilla />} />
-  <Route path="LuxuryVilla" element={<LuxuryVilla />} />
-  <Route path="MountainChalet" element={<MountainChalet />} />
-  <Route path="SmartHome" element={<SmartHome />} />
-</Route>
+        {/* Home Stay */}
+        <Route path="Homestays" element={<HomestaysContainer />}>
+          <Route index element={<BeachHouse />} />
+          <Route path="BeachHouse" element={<BeachHouse />} />
+          <Route path="CountryCottage" element={<CountryCottage />} />
+          <Route path="EcoFriendlyHouse" element={<EcoFriendlyHouse />} />
+          <Route path="FamilyHouse" element={<FamilyHouse />} />
+          <Route path="IndependentVilla" element={<IndependentVilla />} />
+          <Route path="LuxuryVilla" element={<LuxuryVilla />} />
+          <Route path="MountainChalet" element={<MountainChalet />} />
+          <Route path="SmartHome" element={<SmartHome />} />
+        </Route>
 
-{/* Luxory */}
-<Route path="Luxury" element={<LuxuryContainer />}>
-  <Route index element={<LuxuryVillaa />} />
+        {/* Luxory */}
+        <Route path="Luxury" element={<LuxuryContainer />}>
+          <Route index element={<LuxuryVillaa />} />
+          <Route path="LuxuryVilla" element={<LuxuryVillaa />} />
+          <Route path="LuxuryPalace" element={<LuxuryPalacezzz />} />
+          <Route path="LuxuryChalet" element={<LuxuryChalet />} />
+          <Route path="PrivateIslandVilla" element={<PrivateIslandVilla />} />
+          <Route path="LuxuryPenthouse" element={<LuxuryPenthouse />} />
+          <Route path="UnderwaterHouse" element={<UnderwaterHouse />} />
+          <Route path="GlassDesertHouse" element={<GlassDesertHouse />} />
+          <Route path="LuxuryCastle" element={<LuxuryCastle />} />
+        </Route>
 
-  <Route path="LuxuryVilla" element={<LuxuryVillaa />} />
-  <Route path="LuxuryPalace" element={<LuxuryPalacezzz />} />
-  <Route path="LuxuryChalet" element={<LuxuryChalet />} />
-  <Route path="PrivateIslandVilla" element={<PrivateIslandVilla />} />
-  <Route path="LuxuryPenthouse" element={<LuxuryPenthouse />} />
-  <Route path="UnderwaterHouse" element={<UnderwaterHouse />} />
-  <Route path="GlassDesertHouse" element={<GlassDesertHouse />} />
-  <Route path="LuxuryCastle" element={<LuxuryCastle />} />
-</Route>
-
- {/* PROFILE */}
+          {/* PROFILE */}
             <Route path="ProfileE" element={<ProfileContainer />}>
             <Route path="ProfileInfo" element={<ProfileInfo />} />
             <Route path="UpdateProfile" element={<UpdateProfile />} />
             <Route path="Account" element={<Account />} />
+            
+            {/* Side Wepsite*/}
+            <Route path="Privacy" element={<Privacy />} />
+            <Route path="Help" element={<Help />} />
             <Route path="Contact" element={<Contact />} />
-               <Route path="About" element={<About />} />
+            <Route path="About" element={<About />} />
+
             </Route>
             </Route>
         

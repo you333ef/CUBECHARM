@@ -10,6 +10,7 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { FaUserCircle, FaLock, FaEdit } from "react-icons/fa";  //New Icons To Dropdown 
 import { AiOutlineUser } from "react-icons/ai";
 import { FaCubes, FaUser, FaShieldAlt, FaEnvelope } from "react-icons/fa";
+import { SiHelpdesk } from "react-icons/si";
 
 
 
@@ -132,7 +133,7 @@ function Dropdown() {
       About
     </Link>
     <Link
-      to="/auth/ChangePass"
+      to="/HomeList/ProfileE/Privacy"
       className="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer"
     >
       <FaShieldAlt className="mr-2" size={18} /> 
@@ -144,6 +145,13 @@ function Dropdown() {
     >
       <FaEnvelope className="mr-2" size={18} /> 
       Contact
+    </Link>
+      <Link
+      to="/HomeList/ProfileE/Help"
+      className="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer"
+    >
+      <SiHelpdesk  className="mr-2" size={18} /> 
+     Help
     </Link>
   </ul>
 )}
