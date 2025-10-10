@@ -138,6 +138,10 @@ import Contact from "./PROFILE.tsx/Contact";
 import About from "./PROFILE.tsx/About";
 import Help from "./pages/Help";
 import Privacy from "./pages/Privacy";
+import PaymentContainer from "./Payment/PaymentContainer";
+import Pay_FirstStep from "./Payment/Pay_FirstStep";
+import Pay_SecondStep from "./Payment/Pay_SecondStep";
+import Completed from "./Payment/Completed";
 function App() {
   return (
     <BrowserRouter>
@@ -336,6 +340,15 @@ function App() {
 
             </Route>
             </Route>
+          {/* Payment Wepsite*/}
+            <Route path="PaymentContainer" element={<PaymentContainer />}>
+            <Route path="Pay_FirstStep" element={<Pay_FirstStep />} />
+            <Route path="Pay_SecondStep" element={<Pay_SecondStep />} />
+             <Route path="Completed" element={<Completed />} />
+            </Route>
+           
+
+            
         
       
       </Routes>

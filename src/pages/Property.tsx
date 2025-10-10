@@ -67,6 +67,7 @@ const Property = () => {
                 PRO - MODE
               </Link>
             </div>
+      
           </div>
           <div className="mt-4">
             <h2 className="text-xl font-semibold mb-2">Characteristics</h2>
@@ -151,10 +152,7 @@ const Property = () => {
 
           {/* Action Buttons */}
           <div className="flex flex-col space-y-4 ml-auto">
-            <Button
-              name="Show phone number"
-              className="bg-green-500 hidden md:block lg:block text-white text-lg py-3 px-6 rounded-lg w-2/4 hover:bg-green-600"
-            />
+        
             <Button
               name="Write a message"
               className="bg-skyline-blue hidden md:block lg:block text-white text-lg py-3 px-6 rounded-lg w-2/4 hover:bg-sky-blue"
@@ -166,6 +164,13 @@ const Property = () => {
             >
               PRO - MODE
             </Link>
+                  <Link
+              to="/PaymentContainer/Pay_FirstStep"
+              className="px-8 text-center hidden md:block lg:block w-2/4 py-2 bg-green-500 text-white font-bold rounded-md text-xl tracking-wide hover:shadow-lg shadow-[0_9px_14px_rgba(0,0,0,0.1),0_9px_28px_rgba(0,0,0,0.05)] transition-all"
+            >
+            Pay Now
+            </Link>
+            
             <div className="md:flex lg:flex hidden md:flex-col md:items-start md:mt-10 lg:flex-col lg:items-start lg:mt-10">
               <Link className="flex gap-4 items-center text-lg font-semibold mt-2 text-skyline-blue" to="/account/user-profile">
                 <span>Yacine dev</span> <img src={person} alt="profile" className="h-8 w-8 rounded-full object-cover border border-skyline-blue"/>

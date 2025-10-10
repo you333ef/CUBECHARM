@@ -6,6 +6,8 @@
     "@hookform/resolvers": "^3.9.0",
     "@photo-sphere-viewer/core": "^5.10.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.6.1",
+    "@stripe/react-stripe-js": "^5.2.0",
+    "@stripe/stripe-js": "^8.0.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
